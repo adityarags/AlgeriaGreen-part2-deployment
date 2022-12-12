@@ -8,6 +8,9 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import matplotlib
 
+@st.cache(allow_output_mutation = True)
+def load_model():
+    return tf.keras.models.load_model('models/1_IndoorClimateFactors/model.h5')
 
 def prediction(file):
     
@@ -39,7 +42,7 @@ def prediction(file):
     future = np.expand_dims(future, axis=0)
 
     #importing model:
-    model = tf.keras.models.load_model('models/1_IndoorClimateFactors/model.h5')
+    model = load_model()
 
     #prediction
     future_predictions = model.predict(future)

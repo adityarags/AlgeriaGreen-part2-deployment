@@ -1,7 +1,12 @@
 import streamlit as st
 import pickle
 import numpy as np
-model = pickle.load(open("models/3_RecommendationSystems/rf_model.h5", "rb"))
+
+@st.cache(allow_output_mutation = True)
+def load_model():
+    return pickle.load(open("models/3_RecommendationSystems/rf_model.h5", "rb"))
+
+model = load_model()
 
 def app():
     st.title("🌱 Omdena Algeria Chapter 🌱")

@@ -13,12 +13,7 @@ import pandas as pd
 import time
 import cv2
 
-import app1
-import app1_2
-import app2
-import app3
-import app4
-import app5
+
 
 #image_rootpath='Images/'
 
@@ -28,6 +23,14 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded",
 )
+
+import app1
+import app1_2
+import app2
+import app3
+import app4
+import app5
+
 PAGES=	{	
 "Algeria Local Chapter":app1,
 "Algeria Chapter Part_2":app1_2,
